@@ -1,0 +1,9 @@
+export { OnboardingForm } from "./onboarding-form";
+export { ProgressIndicator } from "./progress-indicator";
+export { Step1Basic } from "./step-1-basic";
+export { Step2Health } from "./step-2-health";
+export { Step3Lifestyle } from "./step-3-lifestyle";
+export { Step4Fitness } from "./step-4-fitness";
+export { Step5Goals } from "./step-5-goals";
+export { Step6Medical } from "./step-6-medical";
+export { Step7Psychological } from "./step-7-psychological";
