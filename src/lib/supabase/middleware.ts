@@ -9,14 +9,14 @@ export async function updateSession(request: NextRequest) {
   // Check if Supabase is properly configured
   const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
   const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
-  const isSupabaseConfigured =
-    supabaseUrl &&
-    supabaseKey &&
-    !supabaseUrl.includes("placeholder") &&
-    !supabaseKey.includes("placeholder");
 
-  if (!isSupabaseConfigured) {
+  // Validate URL format
+  const isValidUrl = supabaseUrl && (supabaseUrl.startsWith("http://") || supabaseUrl.startsWith("https://"));
+  const isValidKey = supabaseKey && supabaseKey.length > 50;
+
+  if (!isValidUrl || !isValidKey) {
     // Allow all requests when Supabase is not configured (demo mode)
+    console.log("Supabase not configured, running in demo mode");
     return supabaseResponse;
   }
 
