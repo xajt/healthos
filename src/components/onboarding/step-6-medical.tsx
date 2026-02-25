@@ -13,7 +13,6 @@ export function Step6Medical({ defaultValues, onSubmit }: Step6MedicalProps) {
   const {
     register,
     handleSubmit,
-    formState: { errors },
   } = useForm<MedicalForm>({
     resolver: zodResolver(medicalSchema),
     defaultValues: {

@@ -15,7 +15,6 @@ export function Step2Health({ defaultValues, onSubmit }: Step2HealthProps) {
     handleSubmit,
     watch,
     setValue,
-    formState: { errors },
   } = useForm<HealthInfoForm>({
     resolver: zodResolver(healthInfoSchema),
     defaultValues: {
